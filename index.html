@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="My simplified version of the old game 'Simon Says'.">
+    <meta name="author" content="Abdullah Yahya">
+    <title>JSGG | Generated Project</title>
+    <link rel="stylesheet" href="build/assets/css/vendor.min.css">
+    <link rel="stylesheet" href="build/assets/css/app.css">
+    <style>
+      .nolink-style {
+        text-decoration: none;
+      }
+
+      .nolink-style a:visited  {
+        color: #606f7b;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container flex h-screen">
+      <div class="card">
+        <img class="w-full" src="build/assets/images/js_gulp_gen_logo.png" alt="JS-Gulp-Gen Logo">
+        <div class="card-body">
+          <!-- <div class="font-bold text-xl mb-2">Project Generated</div> -->
+          <form class="mx-auto -ml-3 w-full max-w-xs" id="weatherLocation">
+            <div class="md:flex md:items-center mb-6">
+              <div class="md:w-1/3">
+                <label class="block text-grey font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-location">
+                  Location
+                </label>
+              </div>
+              <div class="md:w-2/3">
+                <input class="field-input hover:border-purple" id="inline-location" type="text" value="Portland">
+              </div>
+            </div>
+            <div class="md:flex md:items-center">
+              <div class="md:w-1/3">
+                <label class="block text-grey font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-units">
+                  Units
+                </label>
+              </div>
+               <div class="relative mb-6">
+                 <select class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="inline-units">
+                   <option value="">Default (Kelvins)</option>
+                   <option value="imperial">Imperial (Fahrenheit)</option>
+                   <option value="metric">Metric (Celsius)</option>
+                 </select>
+                 <div class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
+                   <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                 </div>
+               </div>
+              <!-- <div class="md:w-1/3">
+                <label class="block text-grey font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-units">
+                  Units
+                </label>
+              </div>
+              <div class="md:w-2/3">
+                <input class="field-input hover:border-purple" id="inline-units" type="text" value="Metric">
+              </div> -->
+            </div>
+            <div class="md:flex md:items-center">
+              <div class="md:w-1/3"></div>
+              <div class="md:w-2/3">
+                <button class="btn-submit hover:bg-purple-light" type="submit">Get Humidity</button>
+              </div>
+            </div>
+          </form>
+          <p class="mt-6 text-orange-lighter text-xs" id="errors"></p>
+          <p class="mt-6 text-grey-darker text-base showHumidity"></p>
+          <p class="mt-6 text-grey-darker text-base showTemp"></p>
+        </div>
+      </div>
+    </div>
+
+    <script src="build/assets/js/vendor.min.js"></script>
+    <script src="build/assets/js/app.js"></script>
+  </body>
+</html>

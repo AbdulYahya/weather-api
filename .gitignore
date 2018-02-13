@@ -1,0 +1,13 @@
+## Compiled Directories ##
+build/
+tmp/
+
+## Dependency Directories ##
+bower_components/
+node_modules/
+
+## Files ##
+tailwind.js
+
+## System Files ##
+.DS_Store
