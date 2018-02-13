@@ -1,6 +1,4 @@
-import { apiKey } from './../.env';
-
-const appid = apiKey.apiKey;
+import apiKey from '../.env';
 
 $(function() {
   $('#weatherLocation').submit(function(event) {
@@ -26,7 +24,6 @@ $(function() {
     $('#errors').text('');
 
     $.ajax({
-      // url: `http:/api.openweathermap.org/data/2.5/weather?q=${city}&appid=${appid}`,
       url : `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKey}`,
       type: 'GET',
       data: {

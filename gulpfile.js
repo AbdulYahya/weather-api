@@ -52,7 +52,7 @@ gulp.task('images', () => {
 gulp.task('jsBrowserify', ['concatJS'], () => {
   return browserify({ entries: ['tmp/allConcat.js'] })
     .transform(babelify.configure({
-      presets: ["env"]
+      presets: ['env']
     }))
     .bundle()
     .pipe(source('app.js'))
