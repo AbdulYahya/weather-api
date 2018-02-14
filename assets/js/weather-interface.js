@@ -25,23 +25,28 @@ $(document).ready(function() {
     $('#inline-units').val('');
     $('#errors').text('');
 
-    let request = new XMLHttpRequest();
-    let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKey}`;
+    let promise = new Promise(function(resolve, reject) {
+      let request = new XMLHttpRequest();
+      let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKey}`;
 
-    request.onreadystatechange = function() {
-      if (this.readyState === 4 && this.status === 200) {
-        let response = JSON.parse(this.responseText);
-        getElements(response);
+      request.onload = function() {
+        if (this.status === 200) {
+          resolve(request.response);
+        } else {
+          reject(Error(request.statusText));
+        }
       }
-    };
+      request.open("GET", url, true);
+      request.send();
+    });
 
-    request.open("GET", url, true);
-    request.send();
+    promise.then(function(response) {
+      let body = JSON.parse(response);
 
-    function getElements(response) {
-      $('.showHumidity').text(`The humidity in ${city} is ${response.main.humidity}%`);
-      $('.showTemp').text(`The temperature in ${units} is ${response.main.temp}.`);
-    };
-
+      $('.showHumidity').text(`The humidity in ${city} is ${body.main.humidity}%`);
+      $('.showTemp').text(`The temperature in ${units} is ${body.main.temp}.`);
+    }, function(error) {
+      $('#errors').text(`There was an error processing your request: ${error.message}. Please try again`);
+    });
   });
 });
