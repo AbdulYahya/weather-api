@@ -1,0 +1,11 @@
+## Directories ##
+bower_components/
+build/
+node_modules/
+tmp/
+
+## Files ##
+tailwind.js
+
+## System Files ##
+.DS_Store
